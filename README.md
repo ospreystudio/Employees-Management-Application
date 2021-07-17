@@ -133,14 +133,14 @@
 Want to contribute? Great!
 
 
-Open your favorite Terminal  Second Tab:.
+Open your favorite Terminal and run First Tab:
 
 First Tab:
 
 ```sh
 npm install && npm run dev
 ```
-Config your .env file run second tab:
+Config your .env file and run second tab:
 ```sh
 php artisan migrate
 ```
