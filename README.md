@@ -1,62 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Employees Management Application BY JUSTIN MOREYL (Янюшкин Вадим)
+[![N|Solid](https://i.ibb.co/vHpsNKL/logo.png)](https://nodesource.com/products/nsolid)
+## Definition
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+- Laravel + vue.js
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Technologies
+- [Composer] - it is an application level batch manager for the PHP programming language
+- [Laravel-8] - free open source web framework designed for development using the MVC architectural model.
+- [Vue.js] - Vue.js - open source JavaScript framework
+- [MySQL-5] - free relational database management system
+- [HTML-5] - structuring language
+- [bootstrap 4] - free set of tools for creating websites and web applications.
 
-## Learning Laravel
+## Specification
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Use Laravel 8 framework as development platform
+2. Mysql 5 or later database
+3. Vue.js + Laravel mix for compiling assets (js, css and images)
+   3.1 Implement vue,js on employee management only. CRUD + search features
+4. Bootstrap
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+>  USER INTERFACE
+1. Interface should be responsive based on HTML5 and bootstrap 4.
+2. User interface layout should have side bar menu and header
+- On side bar the following should be displayed as vertical menu
+  2.1 Dashboard
+  2.2 Employee management
+  3.2 System management
+  3.2.1 Country (sub menu)
+  3.2.2 State (sub menu)
+  3.2.3 City (sub menu)
+  3.2.4  Department(sub menu)
+4. User Management
+   4.1 User (sub menu)
+   4.2 Role (sub menu optional)
+   4.3 Permission (sub menu optional)
 
-## Laravel Sponsors
+5. On header interface, display the name of the logged in user as well as the menu for logout
+6. After authentication, the user should be redirected to blank dashboard
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+>Authentication
+- User will be able to login using email and password
+- Three(3) failed attempt will lock the user for 5 minutes
+1. User Management
+- Create, Update and Delete users
+- Change Password
+- Search User by username and email
+- Role & Permission – CRUD (optional)
+2. Employee management
+- List of employees with search and filter by employee name and department
+- Create, update and delete employees
 
-### Premium Partners
+3. System Management
+   3.1 Country
+- List of countries
+- Create, Update and delete
+  3.2 State
+- List of states
+- Create, Update and delete
+  3.3 City
+- List of cities
+- Create, Update and delete
+  3.4 Department
+- List of departments
+- Create, Update and delete
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+> API
+- Create an API and point for user registration and authentication
+- Create an API and point to list all employees order alphabetically by lastname
 
-## Contributing
+> Data Dictionary
+- Employees
+  | Id | Auto increment |  
+  | lastname | varchar(60) | *required |
+  | firstname | varchar(60) | *required |
+  | middle name | varchar(60) |
+  | address | varchar(120) | *required |
+  | department_id | Foreign key | *required |
+  | city_id | Foreign keyt | *required |
+  | state_id | Foreign key | *required |
+  | country_id | Foreign key | *required |
+  | zip_code | char(10) | *required |
+  | birthdate | date |
+  | date_hired | date |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at |datetimet |
+- Users
+  | Id | Auto increment |  
+  | username | char(20) | *required |
+  | lastname | varchar(60) | *required |
+  | email | varchar(60) | *required |
+  | password | varchar(60) | *required |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at |datetimet |
+- Countries
+  | Id | Auto increment |  
+  | country_code | char(20) | *required |
+  | name | varchar(60) | *required |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at | datetimet |
+- States
+  | Id | Auto increment |
+  | country_id | Foreign key | *required |
+  | name | varchar(60) | *required |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at |datetimet |
+- Cities
+  | Id | Auto increment |
+  | state_id | Foreign key | *required |
+  | name | varchar(60) | *required |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at | datetimet |
+- Departments
+  | Id | Auto increment |
+  | department_id | Foreign key | *required |
+  | name | varchar(60) | *required |
+  | created_at | datetime |
+  | updated_at | datetime |
+  | deleted_at | datetimet |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## Development
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Want to contribute? Great!
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Open your favorite Terminal  Second Tab:.
+
+First Tab:
+
+```sh
+npm install && npm run dev
+```
+Config your .env file run second tab:
+```sh
+php artisan migrate
+```
+Run next tab:
+```sh
+php artisan serve 
+```
+
+Open your second Terminal and run these commands for mix vue.js + laravel 8.
+
+```sh
+npm run watch
+```
+
+App running at:
+http://127.0.0.1:8000
+
+Thank you enjoy!
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+MIT
